@@ -1,0 +1,56 @@
+### đăng ký
+POST  http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "phoneNumber": "0944244304",
+    "password": "khoa123",
+    "confirmPassword": "khoa123",
+    "fullName": "Nguyễn Văn Khoa",
+    "dateOfBirth": "26/03/2000",
+    "address": {
+        "city":"TP.HCM",
+        "district":"Quận 1",
+        "ward":"Nam Kỳ Khởi Nghĩa",
+        "street":"15"
+    }
+}
+
+### đăng nhập
+
+POST  http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "phoneNumber": "0944244304",
+    "password": "khoa123"
+}
+
+### profile
+GET http://localhost:3000/api/auth/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhM2FmZWIxZDQ4NWNhOTY2N2I5OTEiLCJpYXQiOjE2MzEyMDYxNTR9.c1BKq61iG3wNIBYX6PVPFs9wA42mX7fHNJmsgpPQuAY
+
+### update
+PUT http://localhost:3000/api/auth/613a3afeb1d485ca9667b991
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhM2FmZWIxZDQ4NWNhOTY2N2I5OTEiLCJpYXQiOjE2MzEyMDYzNDZ9.jXMfQHvBEKxO2hOljBIc8LOSQSuxxOx2BKycI65fNwM
+
+{
+    "phoneNumber": "0944244304",
+    "password": "khang123",
+    "profile": {
+        "fullName": "Nguyễn Văn Khang",
+        "avatar": "avatar1.img",
+        "dateOfBirth": "10/12/2000",
+        "male": true,
+        "address": {
+            "city":"TP.HCM",
+            "district":"Quận 1",
+            "ward":"Nam Kỳ Khởi Nghĩa",
+            "street":"99"
+        }
+    }
+
+}
+

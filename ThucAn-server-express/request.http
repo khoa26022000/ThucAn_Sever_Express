@@ -3,10 +3,10 @@ POST  http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-    "phoneNumber": "0944244304",
-    "password": "khoa123",
-    "confirmPassword": "khoa123",
-    "fullName": "Nguyễn Văn Khoa",
+    "phoneNumber": "0936125498",
+    "password": "dat123",
+    "confirmPassword": "dat123",
+    "fullName": "Nguyễn Văn Đạt",
     "dateOfBirth": "26/03/2000",
     "address": {
         "city":"TP.HCM",
@@ -54,3 +54,89 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhM
 
 }
 
+### Tạo category
+POST  http://localhost:3000/api/category
+Content-Type: application/json
+
+{
+    "name": "Sushi",
+    "icon": "sushi.png"
+}
+
+### Lấy category 
+GET  http://localhost:3000/api/category
+Content-Type: application/json
+
+
+### Thêm nhà hàng
+POST  http://localhost:3000/api/restaurant/register
+Content-Type: application/json
+
+{
+    "name": "Sushi Nhật Bản",
+    "phoneNumber": "0914147878",
+    "password": "trang123",
+    "rating": 4.8,
+    "categories": ["614551143456f3c4aceacea7"],
+    "duration": "10-20 min",
+    "open": "7:00",
+    "close": "22:00",
+    "city": "TP. HCM",
+    "district": "Quận 5",
+    "ward": "Phạm Ngũ Lão",
+    "street": "10",
+    "photo": "sushinhat.png",
+    "fullName": "Nguyễn Thảo Trang",
+    "avatar": "avt.png",
+    "CMND": "38577000",
+    "dateOfBirth": "22/09/1992",
+    "male": true,
+    "address": "99 Bàu Cát"
+}
+### đăng nhập vào cửa hàng
+POST  http://localhost:3000/api/restaurant/login
+Content-Type: application/json
+
+{
+    "phoneNumber": "0944362587",
+    "password": "nhu123"
+}
+
+### Lấy cửa hàng 
+GET  http://localhost:3000/api/restaurant
+Content-Type: application/json
+
+### Tạo menu cho cửa hàng
+POST http://localhost:3000/api/menu
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN0YXVyYW50SWQiOiI2MTQ1NGQwNzM0NTZmM2M0YWNlYWNlOTgiLCJpYXQiOjE2MzE5MzU3OTR9.3NGIWLsbJDN5G5rXEGQ0Us-xIdUFisMhOwmwFo6YEoo
+
+{
+    "name": "MILK TEA"
+}
+
+### lấy menu cho cửa hàng
+GET http://localhost:3000/api/menu
+Content-Type: application/json
+
+### tạo food mới 
+POST http://localhost:3000/api/food
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN0YXVyYW50SWQiOiI2MTQ1NGQwNzM0NTZmM2M0YWNlYWNlOTgiLCJpYXQiOjE2MzE5MzU3OTR9.3NGIWLsbJDN5G5rXEGQ0Us-xIdUFisMhOwmwFo6YEoo
+
+{
+    "name" : "Trà sữa panda",
+    "photo": "trasuapanda.png",
+    "description": "Sự kết hợp của trân châu trắng và trân châu đen",
+    "menu": "61455d8ca2111b68a5e1932c",
+    "price": 30000,
+    "quantity": 100
+}
+
+### lấy food của cửa hàng
+GET  http://localhost:3000/api/food
+Content-Type: application/json
+
+{
+    "restaurant": "61454d073456f3c4aceace98"
+}
